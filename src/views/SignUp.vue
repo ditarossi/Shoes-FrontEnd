@@ -1,15 +1,16 @@
 <template>
-    <div class="signin" :style="signin">
+    <div class="signup" :style="signup">
         <h1>Welcome!</h1>
-        <input type="text" name="username" id="username" placeholder="Username" :style="input">
+        <input type="text" name="username" id="username" placeholder="Nama Lengkap" :style="input">
+        <br>
+        <input type="email" name="email" id="email" placeholder="E-Mail" :style="input">
         <br>
         <input type="password" name="password" id="password" placeholder="Password" :style="input">
         <br>
         <a class="link" href="#">Forgot Password?</a>
         <br>
         <br>
-        <a class="btn btn-outline-success">Sign In</a>
-        <a class="btn btn-outline-dark" href="/signup">Sign Up</a>
+        <a class="btn btn-primary" href="/login">Create Account</a>
         <br>
         <img src="../assets/google.svg" alt="Login using Google">
         <img src="../assets/facebook.svg" alt="Login using Facebook">
@@ -19,9 +20,9 @@
 
 <script>
     export default {
-        name: 'SignIn',
+        name: 'SignUp',
         props: {
-            signin: String,
+            signup: String,
             input: String
         }
     }
@@ -30,7 +31,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-    .signin {
+    .signup {
         background: rgba(255, 255, 255, 0.4);
         position: absolute;
         top: 20%;
