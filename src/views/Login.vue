@@ -1,20 +1,21 @@
 <template>
-    <div class="signin" :style="signin">
-        <h1>Welcome!</h1>
-        <input type="text" name="username" id="username" placeholder="Username" :style="input">
-        <br>
-        <input type="password" name="password" id="password" placeholder="Password" :style="input">
-        <br>
-        <a class="link" href="#">Forgot Password?</a>
-        <br>
-        <br>
-        <a class="btn btn-outline-success">Sign In</a>
-        <a class="btn btn-outline-dark" href="/signup">Sign Up</a>
-        <br>
-        <img src="../assets/google.svg" alt="Login using Google">
-        <img src="../assets/facebook.svg" alt="Login using Facebook">
-        <img src="../assets/twt.png" alt="Login using Twitter">
-    </div>
+        <img class="bg" src="../assets/image/background.jpg" alt="Login using Facebook">
+        <div class="signin" :style="signin">
+            <h3>Welcome!</h3>
+            <input type="text" name="username" id="username" placeholder="Username" :style="input">
+            <br>
+            <input type="password" name="password" id="password" placeholder="Password" :style="input">
+            <br>
+            <a class="link" href="#">Forgot Password?</a>
+            <br>
+            <br>
+            <a class="btn btn-outline-success">Sign In</a>
+            <a class="btn btn-outline-dark" href="/signup">Sign Up</a>
+            <br>
+            <img class="logo" src="../assets/image/google.svg" alt="Login using Google">
+            <img class="logo" src="../assets/image/facebook.svg" alt="Login using Facebook">
+            <img class="logo" src="../assets/image/twt.png" alt="Login using Twitter">
+        </div>
 </template>
 
 <script>
@@ -29,9 +30,16 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
+    template{
+        /*background-image: url("https://mdbootstrap.com/img/new/fluid/city/008.jpg");*/
+        background-image: url("../assets/image/background.jpg");
+    }
+    
     .signin {
-        background: url("/assets/background.jpg") center center;
+        /*background: url("/assets/background.jpg") center center;
+        background: rgba(255, 255, 255, 0.4);
+        background-color: lightblue;*/
+        background-color: rgb(228, 228, 228);
         /*background: rgba(255, 255, 255, 0.4);*/
         position: absolute;
         top: 20%;
@@ -39,18 +47,18 @@
         width: 40%;
         text-align: center;
         padding: 5px;
-        border-radius: 3rem;
+        border-radius: 1rem;
         box-shadow: 0px 0px 10px 0px;
         padding-top: 3%;
         padding-bottom: 5%;
         font-family: 'Poppins', sans-serif;
     }
-    h1 {
+    h3 {
         cursor: default;
         user-select: none;
     }
     input {
-        border-radius: 2rem;
+        border-radius: 0.5rem;
         border: none;
         padding: 10px;
         text-align: center;
@@ -71,7 +79,7 @@
         font-size: 10px;
     }
     .btn{
-        border-radius: 2rem;
+        border-radius: 0.5rem;
         border: none;
         padding: 10px;
         text-align: center;
@@ -89,15 +97,20 @@
         cursor: pointer;
         user-select: none;
     }
-    img {
+    .logo {
         height: 2.2rem;
         margin: 10px;
         user-select: none;
     }
-    img:hover {
+    .logo:hover {
         box-shadow: 0px 0px 5px 0px;
         cursor: pointer;
         border-radius: 200rem;
+    }
+
+    .bg{
+        width: 100%;
+        height: 100%;
     }
 </style>
 
