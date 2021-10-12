@@ -31,7 +31,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
     .signin {
-        background: rgba(255, 255, 255, 0.4);
+        background: url("/assets/background.jpg") center center;
+        /*background: rgba(255, 255, 255, 0.4);*/
         position: absolute;
         top: 20%;
         left: 30%;

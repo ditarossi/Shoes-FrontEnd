@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/kategori">Kategori</router-link> |
+    <router-link to="/">Home</router-link> 
+    <router-link to="/kategori" class="dropdown-toggle">Kategori</router-link> 
     <router-link to="/login">Login</router-link>
   </div>
   <router-view/>
@@ -9,9 +9,6 @@
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
@@ -23,10 +20,16 @@
 #nav a {
   font-weight: bold;
   color: #2c3e50;
-  font-size: 20px;
+  font-size: 15px;
+  margin: 15px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #ffffff;
+  background: #5A5A5A;
+  padding: 9px;
+  text-align: center;
+  border-radius: 0.3rem;
 }
 </style>
