@@ -1,5 +1,17 @@
 <template>
   <div class="kategori">
-    <h1>This is an kategori page</h1>
+    <list></list>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import list from "./Card.vue";
+
+export default defineComponent({
+    components :{
+      list
+    }
+})
+</script>
+
