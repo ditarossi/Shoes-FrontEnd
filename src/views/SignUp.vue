@@ -2,14 +2,14 @@
     <img class="bg" src="../assets/image/background.jpg" alt="Login using Facebook">
     <div class="signup" :style="signup">
         <h3>Welcome!</h3>
-        <input type="text" name="username" id="username" placeholder="Nama Lengkap" :style="input">
+        <input type="text" v-model="posts.username" id="username" placeholder="Nama Lengkap" :style="input">
         <br>
-        <input type="email" name="email" id="email" placeholder="E-Mail" :style="input">
+        <input type="email" v-model="posts.email" id="email" placeholder="E-Mail" :style="input">
         <br>
-        <input type="password" name="password" id="password" placeholder="Password" :style="input">
+        <input type="password" v-model="posts.password" id="password" placeholder="Password" :style="input">
         <br>
         <br>
-        <a class="btn btn-primary" href="/login">Create Account</a>
+        <a class="btn btn-primary" v-on:click="register" >Create Account</a>
         <br>
         <img class="logo" src="../assets/image/google.svg" alt="Login using Google">
         <img class="logo" src="../assets/image/facebook.svg" alt="Login using Facebook">
@@ -18,11 +18,42 @@
 </template>
 
 <script>
+    import axios from 'axios'
+    import Vue from 'vue'
+    //import VueAxios from 'vue-axios'
+    
+    //Vue.use(VueAxios, axios)
     export default {
+        
         name: 'SignUp',
         props: {
             signup: String,
             input: String
+        },
+        data(){
+            return {
+                posts:{
+                    username:'',
+                    email:'',
+                    password:'',
+                }
+            }
+        },
+        methods:{
+            
+            register(){
+                this.axios.post('https://golang-bookstore-rest-api.herokuapp.com/api/auth/register', this.posts)
+                .then((result)=>{
+                    console.warn(result);
+                    //this.error = false;
+                })
+
+                //.catch(()=>(this.error = true))
+                
+                //e.preventDefault();
+
+                alert(this.username, this.email, this.password)
+            }
         }
     }
 </script>

@@ -1,6 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import axios from 'axios'
+import Vue from 'vue'
+
 //import {BootstrapVue} from 'bootstrap-vue';
 //import Vuelidate from 'vuelidate'
 //import VueSplide from '@splidejs/vue-splide';

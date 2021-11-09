@@ -2,14 +2,14 @@
         <img class="bg" src="../assets/image/background.jpg" alt="Login using Facebook">
         <div class="signin" :style="signin">
             <h3>Welcome!</h3>
-            <input type="text" name="username" id="username" placeholder="Username" :style="input">
+            <input type="text" name="username" v-model="username" placeholder="Username" :style="input">
             <br>
-            <input type="password" name="password" id="password" placeholder="Password" :style="input">
+            <input type="password" name="password" v-model="password" placeholder="Password" :style="input">
             <br>
             <a class="link" href="#">Forgot Password?</a>
             <br>
             <br>
-            <a class="btn btn-outline-success">Sign In</a>
+            <a class="btn btn-outline-success" v-on:click="login" >Sign In</a>
             <a class="btn btn-outline-dark" href="/signup">Sign Up</a>
             <br>
             <img class="logo" src="../assets/image/google.svg" alt="Login using Google">
@@ -19,11 +19,24 @@
 </template>
 
 <script>
+    import axios from 'axios'
     export default {
         name: 'SignIn',
         props: {
             signin: String,
             input: String
+        },
+        data(){
+            return{
+                username:'',
+                password:''
+            }
+        },
+        methods:{
+            async login(){
+
+                alert(this.username, this.password)
+            }
         }
     }
 </script>
