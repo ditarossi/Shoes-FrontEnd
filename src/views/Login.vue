@@ -19,13 +19,19 @@
 </template>
 
 <script>
-    import axios from 'axios'
+    /*import axios from 'axios'
+    import Vue from 'vue'
+    import VueAxios from 'vue-axios'
+
+    Vue.use(VueAxios, axios)*/
+
     export default {
         name: 'SignIn',
         props: {
             signin: String,
             input: String
         },
+        // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
         data(){
             return{
                 username:'',
@@ -33,6 +39,7 @@
             }
         },
         methods:{
+            // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
             async login(){
 
                 alert(this.username, this.password)

@@ -1,15 +1,15 @@
 <template>
-    <img class="bg" src="../assets/image/background.jpg" alt="Login using Facebook">
+    <img class="bg" src="../assets/image/background.jpg" alt="Login using Facebook">    
     <div class="signup" :style="signup">
         <h3>Welcome!</h3>
-        <input type="text" v-model="posts.username" id="username" placeholder="Nama Lengkap" :style="input">
+        <input type="text" v-model="posts.nama" id="username" placeholder="Nama Lengkap" :style="input">
         <br>
         <input type="email" v-model="posts.email" id="email" placeholder="E-Mail" :style="input">
         <br>
         <input type="password" v-model="posts.password" id="password" placeholder="Password" :style="input">
         <br>
         <br>
-        <a class="btn btn-primary" v-on:click="register" >Create Account</a>
+        <a class="btn btn-primary" v-on:click="register">Create Account</a>
         <br>
         <img class="logo" src="../assets/image/google.svg" alt="Login using Google">
         <img class="logo" src="../assets/image/facebook.svg" alt="Login using Facebook">
@@ -19,10 +19,9 @@
 
 <script>
     import axios from 'axios'
-    import Vue from 'vue'
-    //import VueAxios from 'vue-axios'
-    
-    //Vue.use(VueAxios, axios)
+    //import Vue from 'vue'
+    // import VueAxios from 'vue-axios'
+
     export default {
         
         name: 'SignUp',
@@ -30,32 +29,85 @@
             signup: String,
             input: String
         },
+        // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
         data(){
             return {
                 posts:{
-                    username:'',
+                    nama:'',
                     email:'',
                     password:'',
                 }
             }
         },
+        
+        // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+        // mounted(){
+        //     this.getRoles();
+        // },
         methods:{
+
+            // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+            // register(e){
+            //     e.preventDefault();
+            //     axios
+            //     .post('https://golang-bookstore-rest-api.herokuapp.com/api/auth/register', this.posts)
+            //     .then(response => (console.log(response.data)))
+            //     .catch(error => console.log(error))
+            //     .finally(() => this.loading = false)
+            // }
+
+            // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+            // register(){
+            //     axios.post('https://golang-bookstore-rest-api.herokuapp.com/api/auth/register', this.posts)
+            //      .then((res) => {
+            //          //Perform Success Action
+            //          console.log(res);
+            //          //this.error = false;
+            //      })
+            //      .catch((error) => {
+            //          // error.response.status Check status code
+            //      }).finally(() => {
+            //          //Perform action in always
+            //      });
+            // }
             
-            register(){
-                this.axios.post('https://golang-bookstore-rest-api.herokuapp.com/api/auth/register', this.posts)
-                .then((result)=>{
-                    console.warn(result);
-                    //this.error = false;
-                })
+            // ALMIRA
+            //eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+            // register(e){
+            //     this.axios
+            //     .post('https://golang-bookstore-rest-api.herokuapp.com/api/auth/register', 
+            //     this.posts)
+            //     .then((result)=>{
+            //         console.log(result);
+            //         this.error = false;
+            //     })
 
-                //.catch(()=>(this.error = true))
+            //     .catch(()=>(this.error = true))
                 
-                //e.preventDefault();
+            //     e.preventDefault();
+            // }
 
-                alert(this.username, this.email, this.password)
+            //TESTING FUNCTION
+            // register(){
+            //     console.log("Hai kamu berhasil!")
+            // }
+
+            //SAMA KAYAK PERCOBAAN
+            // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+            async register(){
+                try{
+                    const response = await axios.post('https://golang-bookstore-rest-api.herokuapp.com/api/auth/register', this.posts)
+                    console.log(response)
+                } catch(e){
+                    console.log(e)
+                }
+                
+                
+            }
+                
             }
         }
-    }
+    
 </script>
 
 <style>
