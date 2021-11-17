@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <nav></nav>
     <slider></slider>
     <br>
     <br>
@@ -11,15 +12,17 @@
 </template>
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import list from "./Card.vue";
+import list from "../components/Card.vue";
 import slider from "./Slider.vue";
-import footerweb from "./Footer.vue";
+import footerweb from "../components/Footer.vue";
+import nav from "../components/Navbar.vue";
 
 @Options({
   components: {
     list,
     slider,
-    footerweb
+    footerweb,
+    nav
   },
 })
 export default class Home extends Vue {}

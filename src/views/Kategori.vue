@@ -6,11 +6,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import list from "./Card.vue";
+import list from "../components/Card.vue";
+//import nav from "../components/Navbar.vue";
 
 export default defineComponent({
     components :{
-      list
+      list,
+      
     }
 })
 </script>
