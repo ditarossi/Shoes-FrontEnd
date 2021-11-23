@@ -2,9 +2,10 @@
         <img class="bg" src="../assets/image/background.jpg" alt="Login using Facebook">
         <div class="signin" :style="signin">
             <h3>Welcome!</h3>
-            <input type="text" name="username" v-model="username" placeholder="Username" :style="input">
+            <input required type="text" name="email" v-model="form.email" placeholder="E-Mail" :style="input">
             <br>
-            <input type="password" name="password" v-model="password" placeholder="Password" :style="input">
+            <input required type="password" name="password" v-model="form.password" placeholder="Password" :style="input">
+            <div v-if="form.password.length >1 && form.password.length <8 " class="text-danger">Password minimal 8 karakter</div>
             <br>
             <a class="link" href="#">Forgot Password?</a>
             <br>
@@ -12,15 +13,16 @@
             <a class="btn btn-outline-success" v-on:click="login" >Sign In</a>
             <a class="btn btn-outline-dark" href="/signup">Sign Up</a>
             <br>
-            <img class="logo" src="../assets/image/google.svg" alt="Login using Google">
+            <img class="logo" src="../assets/image/google.svg" v-on:click="GoogleAuth" alt="Login using Google">
             <img class="logo" src="../assets/image/facebook.svg" alt="Login using Facebook">
             <img class="logo" src="../assets/image/twt.png" alt="Login using Twitter">
         </div>
 </template>
 
 <script>
-    /*import axios from 'axios'
-    import Vue from 'vue'
+    import axios from 'axios'
+    /*import firebase from 'firebase'
+    import Vue from 'vue'y
     import VueAxios from 'vue-axios'
 
     Vue.use(VueAxios, axios)*/
@@ -34,15 +36,33 @@
         // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
         data(){
             return{
-                username:'',
-                password:''
+                form:{
+                    email:'',
+                    password:'',
+                }
             }
         },
         methods:{
             // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
             async login(){
-
-                alert(this.username, this.password)
+                try{
+                    const response = await axios.post(' https://golang-bookstore-rest-api.herokuapp.com/api/auth/login', this.form)
+                    console.warn(response)
+                    alert("Login Berhasil !")
+                } catch(e){
+                    console.log(e)
+                    alert("Login Gagal !")
+                }  
+            },
+            // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+            async GoogleAuth(){
+                // const provider = new firebase.auth.GoogleAuthProvider();
+                // try{
+                //     await firebase.auth().signInWithPopup(provider)
+                // } catch (error){
+                //     console.log(error);
+                // }
+                alert("Login Berhasil")
             }
         }
     }

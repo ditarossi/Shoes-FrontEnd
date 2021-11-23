@@ -15,14 +15,13 @@ import { Options, Vue } from 'vue-class-component';
 import list from "../components/Card.vue";
 import slider from "./Slider.vue";
 import footerweb from "../components/Footer.vue";
-import nav from "../components/Navbar.vue";
+//import nav from "../components/Navbar.vue";
 
 @Options({
   components: {
     list,
     slider,
     footerweb,
-    nav
   },
 })
 export default class Home extends Vue {}

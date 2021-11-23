@@ -1,5 +1,6 @@
 <template>
   <div class="kategori">
+    <nav></nav>
     <list></list>
   </div>
 </template>
@@ -12,7 +13,6 @@ import list from "../components/Card.vue";
 export default defineComponent({
     components :{
       list,
-      
     }
 })
 </script>

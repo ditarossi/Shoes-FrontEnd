@@ -1,11 +1,36 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> 
-    <router-link to="/kategori" class="dropdown-toggle">Kategori</router-link> 
+    <router-link to="/kategori" >Kategori</router-link> 
     <router-link to="/login">Sign In</router-link>
   </div>
   <router-view/>
 </template>
+
+<script lang="ts">
+//import Dropdown from './components/Dropdown.vue';
+export default {
+  name : 'nav',
+  // components:{
+  //   Dropdown
+  // },
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  // data(){
+  //   return{
+  //     services :[
+  //       {
+  //         title : 'Brand',
+  //         link : '#',
+  //       },
+  //       {
+  //         title : 'Color',
+  //         link : '#',
+  //       }
+  //     ]
+  //   }
+  // }
+}
+</script>
 
 <style>
 #app {
