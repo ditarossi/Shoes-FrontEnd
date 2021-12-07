@@ -46,7 +46,7 @@
             // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
             async login(){
                 try{
-                    const response = await axios.post(' https://golang-bookstore-rest-api.herokuapp.com/api/auth/login', this.form)
+                    const response = await axios.post('https://penjualansepatu.herokuapp.com/login', this.form)
                     console.warn(response)
                     alert("Login Berhasil !")
                 } catch(e){

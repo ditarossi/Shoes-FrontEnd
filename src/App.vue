@@ -9,8 +9,15 @@
 
 <script lang="ts">
 //import Dropdown from './components/Dropdown.vue';
+import {mapActions} from "vuex"
+
 export default {
   name : 'nav',
+  methods :{
+    ...mapActions('user', {
+        login : 'login',
+      })
+  }
   // components:{
   //   Dropdown
   // },

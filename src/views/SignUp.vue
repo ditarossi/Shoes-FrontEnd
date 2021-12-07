@@ -2,10 +2,10 @@
     <img class="bg" src="../assets/image/background.jpg" alt="Login using Facebook">    
     <div class="signup" :style="signup">
         <h3>Welcome!</h3>
-        <input required type="text" v-model="posts.nama" id="username" placeholder="Nama Lengkap" :style="input">
         <br>
         <input required type="email" v-model="posts.email" id="email" placeholder="E-Mail" :style="input">
         <br>
+        <input required type="text" v-model="posts.name" id="name" placeholder="Nama Lengkap" :style="input">
         <input required type="password" v-model="posts.password" id="password" placeholder="Password" :style="input">
         <div v-if="posts.password.length >1 && posts.password.length <8 " class="text-danger">Password minimal 8 karakter</div>
         <br>
@@ -34,8 +34,8 @@
         data(){
             return {
                 posts:{
-                    nama:'',
                     email:'',
+                    name:'',
                     password:'',
                 }
             }
@@ -97,7 +97,7 @@
             // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
             async register(){
                     try{
-                        const response = await axios.post('https://golang-bookstore-rest-api.herokuapp.com/api/auth/register', this.posts)
+                        const response = await axios.post('https://penjualansepatu.herokuapp.com/users', this.posts)
                         console.warn(response)
                         alert("Registrasi Berhasil !")
                     } catch(e){
